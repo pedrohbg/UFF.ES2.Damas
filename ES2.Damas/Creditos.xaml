@@ -1,0 +1,9 @@
+﻿<Window x:Class="ES2.Damas.Creditos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Creditos" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+
+    <Window.Background>
+        <ImageBrush ImageSource="Layout/Imagens/Creditos-page.png"></ImageBrush>
+    </Window.Background>
+</Window>

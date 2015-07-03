@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ES2.Damas.exe" version="1.0.0.3" publicKeyToken="94561552ceb4eb21" language="pt-BR" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ES2.Damas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ES2.Damas.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AttachedCommandBehavior.dll" size="16896">
+      <assemblyIdentity name="AttachedCommandBehavior" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>CaEI4r60F2MlxUKd8sfZy0ZlNlfX6+qWkppSMtQaeWE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ES2.Damas.exe" size="2950656">
+      <assemblyIdentity name="ES2.Damas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8kyt1d3OMdk+lQSS/p0SE3bb6zIqP7p8Ggzrq+EWFpM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GalaSoft.MvvmLight.dll" size="30208">
+      <assemblyIdentity name="GalaSoft.MvvmLight" version="5.1.1.35049" publicKeyToken="E7570AB207BCB616" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>dVxjmp7sLVxTn4XihYYpJu7zmyAU4EFkklZJd4rhDxQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GalaSoft.MvvmLight.Extras.dll" size="17920">
+      <assemblyIdentity name="GalaSoft.MvvmLight.Extras" version="5.1.1.35049" publicKeyToken="669F0B5E8F868ABF" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>61I6wKRPDQhn/ILd7KwjvBR1OO6kyC5vQtkENaY05KI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GalaSoft.MvvmLight.Platform.dll" size="13824">
+      <assemblyIdentity name="GalaSoft.MvvmLight.Platform" version="5.1.1.35053" publicKeyToken="5F873C45E98AF8A1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Yt143IHp6ai7aWNqpPNa8xJJOHmHPuEP0+XZ8q8JHlM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Practices.ServiceLocation.dll" size="18112">
+      <assemblyIdentity name="Microsoft.Practices.ServiceLocation" version="1.3.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>NABdaoBDRUJ4DG0ZLmq9B76kmy7rfkP7/f6QwoiZhuU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Windows.Interactivity.dll" size="55904">
+      <assemblyIdentity name="System.Windows.Interactivity" version="4.5.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>k/vFnkiAr8nxNsOsCXatp/P6p8rO3OXIJLM3y8qdLr8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ES2.Damas.exe.config" size="185">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aTdEonIBBAB8HkCMn3osz6eXl03AqRUkD0ZjUO+VHTg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="External\AttachedCommandBehavior.dll" size="16896">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>CaEI4r60F2MlxUKd8sfZy0ZlNlfX6+qWkppSMtQaeWE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="External\GalaSoft.MvvmLight.dll" size="30208">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dVxjmp7sLVxTn4XihYYpJu7zmyAU4EFkklZJd4rhDxQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="External\GalaSoft.MvvmLight.Extras.dll" size="17920">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>61I6wKRPDQhn/ILd7KwjvBR1OO6kyC5vQtkENaY05KI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="External\GalaSoft.MvvmLight.Platform.dll" size="13824">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Yt143IHp6ai7aWNqpPNa8xJJOHmHPuEP0+XZ8q8JHlM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="External\Microsoft.Practices.ServiceLocation.dll" size="18112">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NABdaoBDRUJ4DG0ZLmq9B76kmy7rfkP7/f6QwoiZhuU=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=PEDRO-PC\Pedro" issuerKeyHash="4c4a567001543ad72fe4ec2abc65d82c8f8a7178" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Eaf87pvsbc3qY7+FOe2wycKjZqQLW5cEowQwnz8Dfb0=</DigestValue></Reference></SignedInfo><SignatureValue>c5xvYBODfBR86ZiIgOZy2fuIYQ8kidHJsPUoVVcyBlCHOOty1aya78maTXV5arkqqqjATfq0SpMfyk078FIXvO+kNwkHs642TMsdbbgvYRgIw/rgm/fqEHT8ttFrtBzPzXYCVoZPkPp7AuDkDBnACRGz+zD47kAjY0lJaqIDB2w=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sTdV05l+q0HhZJcjviruer88Tvh1XIL0ryUO7RK4XeUkbXPj9pTDPTCsOWjLOuf6a0yav5aiycIF0RlNnLPpcNNY+58bVBl7GP9WcTeANI1v2r+rDNbOxwBzQaR79vRraxxsUHgsH4gvnOeumLvqqSOBx2+0eE4mJffkIRMkKBU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="bd7d033f9f3004a304975b0ba466a3c2c9b0ed3985bf63eacd6dec9beefca711" Description="" Url=""><as:assemblyIdentity name="ES2.Damas.exe" version="1.0.0.3" publicKeyToken="94561552ceb4eb21" language="pt-BR" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PEDRO-PC\Pedro</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>G+xVvqFI07LWLLhoEOFdVLySvmfZSZTv5QZ92hVHu1Q=</DigestValue></Reference></SignedInfo><SignatureValue>YTtyv5KL9t6fq6V9/mrEnW4t2Tw9+r20I0QxvvapQ+gKo0ojQUbKby7msQqia1N0tMdEndc8GWQsqI72e2L3B1onRMM0G4pFz3Hl7I2VMDaUytEA+pBK298EaXxtws5huJPefCg1MHPdSt7aceXh/MqawYoXJBIqA6gpFpM1v00=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sTdV05l+q0HhZJcjviruer88Tvh1XIL0ryUO7RK4XeUkbXPj9pTDPTCsOWjLOuf6a0yav5aiycIF0RlNnLPpcNNY+58bVBl7GP9WcTeANI1v2r+rDNbOxwBzQaR79vRraxxsUHgsH4gvnOeumLvqqSOBx2+0eE4mJffkIRMkKBU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQHLef45CPOJdNu3UhWSgUCjANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwAUABFAEQAUgBPAC0AUABDAFwAUABlAGQAcgBvMB4XDTE1MDYyNDE4NDE0M1oXDTE2MDYyNDAwNDE0M1owJzElMCMGA1UEAx4cAFAARQBEAFIATwAtAFAAQwBcAFAAZQBkAHIAbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsTdV05l+q0HhZJcjviruer88Tvh1XIL0ryUO7RK4XeUkbXPj9pTDPTCsOWjLOuf6a0yav5aiycIF0RlNnLPpcNNY+58bVBl7GP9WcTeANI1v2r+rDNbOxwBzQaR79vRraxxsUHgsH4gvnOeumLvqqSOBx2+0eE4mJffkIRMkKBUCAwEAATANBgkqhkiG9w0BAQsFAAOBgQAd8BBTSySU/4BAlQv4ALGF00Smo5CRt15wEma74+PRtjjHnXFKex4i0FJUZIVGZN9bxiza3etP/mlgcs5SQj5yOM6Z8ZBBFcr8C0iJs+E9oUmxsp40tTVy3HE+mDzbAhlL2H6vzwrGy4/hWpJASHRLXL405lKXAaMaiYG7JN3dnQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

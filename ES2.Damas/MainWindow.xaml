@@ -1,0 +1,236 @@
+﻿<Window x:Class="ES2.Damas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Entidades="clr-namespace:ES2.Damas.Dominio.Entidades"
+        xmlns:Regras="clr-namespace:ES2.Damas.Dominio.Regras" Title="Damas - Engenharia de Software 2 - Grupo 3" WindowState="Maximized" >
+
+    <Window.Background>
+        <ImageBrush ImageSource="Layout/Imagens/Cool-Wood-Texture-Background-19.jpg"></ImageBrush>
+    </Window.Background>
+    <Window.Resources>
+
+        <DrawingBrush x:Key="TabuleiroDama" Stretch="None" TileMode="Tile" Viewport="0,0,2,2" ViewportUnits="Absolute">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="Black">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,2,2" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="White">
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup>
+                                <RectangleGeometry Rect="0,0,1,1" />
+                                <RectangleGeometry Rect="1,1,1,1" />
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+
+        <Style x:Key="EstiloPecaDama" TargetType="{x:Type Image}">
+            <Style.Triggers>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Tipo}" Value="{x:Static Entidades:TipoPeca.Peao}"/>
+                        <Condition Binding="{Binding Jogador}" Value="{x:Static Entidades:Jogador.Agil}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Layout\Imagens\peaoClaro2.png" />
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Tipo}" Value="{x:Static Entidades:TipoPeca.Peao}"/>
+                        <Condition Binding="{Binding Jogador}" Value="{x:Static Entidades:Jogador.Classico}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Layout\Imagens\peaoEscuro2.png" />
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Tipo}" Value="{x:Static Entidades:TipoPeca.Dama}"/>
+                        <Condition Binding="{Binding Jogador}" Value="{x:Static Entidades:Jogador.Agil}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Layout\Imagens\damaClara2.png" />
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Tipo}" Value="{x:Static Entidades:TipoPeca.Dama}"/>
+                        <Condition Binding="{Binding Jogador}" Value="{x:Static Entidades:Jogador.Classico}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Layout\Imagens\damaEscura2.png" />
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Tipo}" Value="{x:Static Entidades:TipoPeca.PosicaoValida}"/>
+                        <Condition Binding="{Binding Jogador}" Value="{x:Static Entidades:Jogador.GM}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Layout\Imagens\circle-outline-512.png" />
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Tipo}" Value="{x:Static Entidades:TipoPeca.Ataque}"/>
+                        <Condition Binding="{Binding Jogador}" Value="{x:Static Entidades:Jogador.GM}"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="http://img3.wikia.nocookie.net/__cb20140905084358/honorbound-juicebox/images/6/6a/Icon_Physical_Attack.png" />
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+
+
+    <Grid>
+        
+        
+        <StackPanel Orientation="Horizontal">
+            <Viewbox Width="300">
+                
+            </Viewbox>
+            <Viewbox Width="500" Height="500" Name="ViewTabuleiro" >
+
+                <ItemsControl Name="TabuleiroDama"  ItemsSource="{Binding}" RenderTransformOrigin="0.7,0.7" BorderBrush="Black"  BorderThickness="0.2">
+                    <ItemsControl.RenderTransform>
+                        <RotateTransform  CenterX="0.5" CenterY="0.5" Angle="360"/>
+                    </ItemsControl.RenderTransform>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas Width="8" Height="8" Background="{StaticResource TabuleiroDama}" MouseDown="CanvasClick" Name="CanvasDamas" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="1" Height="1" MouseDown="GridClick">
+                                <Image Width="0.8" Height="0.8" Style="{StaticResource EstiloPecaDama}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="Canvas.Left" Value="{Binding Pos.X}" />
+                            <Setter Property="Canvas.Top" Value="{Binding Pos.Y}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+
+            </Viewbox>
+
+            <DockPanel Margin="8" >
+                <Border  CornerRadius="6" BorderBrush="Black" Background="Black" BorderThickness="2" DockPanel.Dock="Top" Height="500">
+                    <StackPanel Background="White" Height="480" >
+                        <GroupBox  Margin="10,5,10,0" FontSize="16" FontWeight="Bold">
+                            <GroupBox.Header>
+                                Jogada Atual
+                            </GroupBox.Header>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="Layout/Imagens/damaEscura2.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"  Name="ImagemTurno"  />
+                                <StackPanel Orientation="Horizontal">
+                                    <!--<Label FontSize="12" Padding="2 2 8 2" >Tempo:</Label>
+                                    <Label Name="TempoJogada" FontSize="12" Padding="2 2 8 2" Content="11:30" ></Label>-->
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Margin="10,0,10,0" FontSize="16" FontWeight="Bold">
+                            <GroupBox.Header>
+                                Jogadas
+                            </GroupBox.Header>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="12" Padding="2 2 8 2" Foreground="Green" >Nº Jogadas:</Label>
+                                    <Label FontSize="12" Padding="2 2 8 2" Name="NumeroJogadasTotal" Content="0"></Label>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="12" Padding="2 2 8 2" Foreground="Green" >Nº Jog. Rest.:</Label>
+                                    <Label FontSize="12" Padding="2 2 8 2"  Name="NumeroJogadasRestantes" Content="20"  />
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Margin="10,0,10,0" FontSize="16" FontWeight="Bold">
+                            <GroupBox.Header>
+                                Ágil
+                            </GroupBox.Header>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="Layout/Imagens/damaClara2.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="12" Padding="2 2 8 2" Foreground="Green" >P. em jogo:</Label>
+                                    <Label FontSize="12" Padding="2 2 8 2"  Name="NumeroPecasAgil" Content="12" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="12" Padding="2 2 8 2" Foreground="Red" >P. eliminadas:</Label>
+                                    <Label FontSize="12" Padding="2 2 8 2"  Name="NumeroEliminadasAgil" Content="0" />
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+
+                        <GroupBox Margin="10,0,10,0" FontSize="16" FontWeight="Bold">
+                            <GroupBox.Header>
+                                Clássico
+                            </GroupBox.Header>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="Layout/Imagens/damaEscura2.png" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="12" Padding="2 2 8 2" Foreground="Green" >P. em jogo:</Label>
+                                    <Label FontSize="12" Padding="2 2 8 2"  Name="NumeroPecasClassico" Content="12"  />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontSize="12" Padding="2 2 8 2" Foreground="Red" >P. eliminadas:</Label>
+                                    <Label FontSize="12" Padding="2 2 8 2"  Name="NumeroEliminadasClassico" Content="0" />
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Margin="10,10,10,0"  FontSize="12" FontWeight="Bold" Foreground="Green" BorderBrush="White" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  >
+                            <GroupBox.Header>
+                                Damas Grupo 3 - ES2
+                            </GroupBox.Header>
+
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="Layout/Imagens/logo-ic.png" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                <StackPanel Orientation="Horizontal">
+                                    <!--<Label FontSize="12" Padding="2 2 8 2" >Tempo:</Label>
+                                    <Label Name="TempoJogada" FontSize="12" Padding="2 2 8 2" Content="11:30" ></Label>-->
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </StackPanel>
+            
+    </Grid>
+
+
+</Window>
